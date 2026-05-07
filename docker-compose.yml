@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  bot:
+    build: .
+    container_name: ekaterina-nails-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./backups:/app/backups
